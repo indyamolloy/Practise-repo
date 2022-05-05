@@ -28,8 +28,9 @@ body {
 }
 
 .game-over {
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(255, 11, 11);
   opacity: 0.8;
+  color: white;
 }
 
 .red {
