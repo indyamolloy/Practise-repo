@@ -17,8 +17,12 @@ function App() {
   }
 
   function handleDelete(index) {
-    console.log(index);
     setNote((note) => note.filter((item, i) => i !== index));
+  }
+
+  function handleEdit(index) {
+    setInput(note[index]);
+    setNote([...note.splice]);
   }
 
   return (
@@ -29,6 +33,7 @@ function App() {
         {note.map((item, index) => (
           <li key={uuidv4()} index={index}>
             {item} <button onClick={() => handleDelete(index)}>X</button>
+            <button onClick={() => handleEdit(index)}>Edit</button>
           </li>
         ))}
       </ul>
