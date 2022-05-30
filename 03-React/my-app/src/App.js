@@ -1,6 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 function App() {
   const [input, setInput] = useState("");
@@ -12,15 +13,23 @@ function App() {
 
   function handleClick() {
     setNote([...note, input]);
+    setInput("");
+  }
+
+  function handleDelete(index) {
+    console.log(index);
+    setNote((note) => note.filter((item, i) => i !== index));
   }
 
   return (
     <div>
-      <input onChange={handleChange}></input>
+      <input onChange={handleChange} value={input}></input>
       <button onClick={handleClick}>Enter</button>
       <ul>
-        {note.map((item) => (
-          <li>{item}</li>
+        {note.map((item, index) => (
+          <li key={uuidv4()} index={index}>
+            {item} <button onClick={() => handleDelete(index)}>X</button>
+          </li>
         ))}
       </ul>
     </div>
