@@ -10,3 +10,7 @@ let dog = {
 };
 
 let age: number;
+//union types
+let mixed: (string | number)[];
+
+let obj: object;
