@@ -3,6 +3,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import Name from "./Name";
 import Card from "./Card";
+import Counter from "./Counter";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <p className="paragraph">world</p>
         </Card>
       </Card>
+      <Counter startingCount={0} />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
